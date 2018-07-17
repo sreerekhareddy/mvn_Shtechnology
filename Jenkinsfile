@@ -24,3 +24,4 @@ node
         cp  ${WORKSPACE}/target/*.war  /opt/tomcat/apache-tomcat-9.0.10/webapps/
         '''
     }
+}
