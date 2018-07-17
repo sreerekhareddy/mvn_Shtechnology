@@ -21,7 +21,7 @@ node
         rm -rf /opt/tomcat/apache-tomcat-9.0.10/webapps/SH*.war
         
         echo step2: Stagging the new package to tomcat server.
-        scp  ${WORKSPACE}/target/*.war  ec2-user@54.164.88.161:/opt/tomcat/apache-tomcat-9.0.10/webapps/
+        cp  ${WORKSPACE}/target/*.war /opt/tomcat/apache-tomcat-9.0.10/webapps/
         '''
     }
 }
