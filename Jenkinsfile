@@ -2,7 +2,7 @@ node
 {
 	stage('SCM Checkout')
 	{
-		git 'https://github.com/Manoha1g/mvn_shoppingcart.git
+		git 'https://github.com/Manoha1g/mvn_shoppingcart.git'
 	}
 	stage('Compile-Package'){
 		// Get maven home path
