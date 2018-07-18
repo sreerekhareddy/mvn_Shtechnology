@@ -11,14 +11,9 @@ node
 	}
 	stage('Deploye to tomcat')
 	{
-		sh '''
-		echo deploy the war to tomcat server.
-
-		echo step-1: Removing the existing package 
-		rm -rf /home/ec2-user/tomcat/apache-tomcat-9.0.10/webapps/SH*.war
-
-		echo step2: Stagging the new package to tomcat server.
-		cp  ${WORKSPACE}/target/*.war /home/ec2-user/tomcat/apache-tomcat-9.0.10/webapps/
-		'''
+		sshagent(['tomcat-dev']) 
+		{
+			sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.95.192:/opt/tomcat8/webapps/'
+      		}
 	}
 }
